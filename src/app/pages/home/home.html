@@ -1,0 +1,195 @@
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <span class="eyebrow">Property Management &amp; Real Estate Consulting</span>
+      <h1>Well-run spaces, <span class="accent">expertly managed.</span></h1>
+      <p class="lead">
+        SleekSpace Management keeps residential and commercial properties well-run,
+        well-maintained, and comfortable for the people who use them every day — protecting
+        long-term value through a hands-on, professional approach.
+      </p>
+      <div class="hero__actions">
+        <a routerLink="/contact" class="btn btn--primary">Request Consultation</a>
+        <a routerLink="/services" class="btn btn--ghost">Explore Our Services</a>
+      </div>
+      <dl class="hero__stats">
+        <div>
+          <dt>Residential &amp; Commercial</dt>
+          <dd>Properties managed end-to-end</dd>
+        </div>
+        <div>
+          <dt>Hands-on</dt>
+          <dd>Direct founder involvement</dd>
+        </div>
+        <div>
+          <dt>Transparent</dt>
+          <dd>Clear reporting &amp; accountability</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="hero__visual" aria-hidden="true">
+      <div class="hero__card hero__card--logo">
+        <img src="logo.png" alt="" width="180" height="180" />
+      </div>
+      <div class="hero__card hero__card--badge hero__card--badge-1">
+        <span class="dot"></span> Reliable communication
+      </div>
+      <div class="hero__card hero__card--badge hero__card--badge-2">
+        <span class="dot"></span> Property value preserved
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ About Overview ============ -->
+<section class="section section--tint">
+  <div class="container about-overview">
+    <div appReveal>
+      <span class="eyebrow">Who We Are</span>
+      <h2>A trusted property management &amp; consulting firm</h2>
+      <p>
+        SleekSpace Management works closely with property owners, developers, landlords, and
+        residents to ensure smooth operations and high standards across every property under
+        management. From service charge management to maintenance, tenant relations, inspections,
+        and vendor coordination, we handle the day-to-day so you don’t have to.
+      </p>
+      <p>
+        Our hands-on approach helps clients protect long-term property value while creating
+        well-managed environments for tenants and residents.
+      </p>
+      <a routerLink="/about" class="btn btn--ghost">More About Us</a>
+    </div>
+
+    <ul class="audience-list" [appReveal]="120">
+      @for (item of audiences; track item.title) {
+        <li>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<!-- ============ Services ============ -->
+<section class="section">
+  <div class="container">
+    <app-section-heading
+      eyebrow="What We Do"
+      title="Comprehensive property management services"
+      lead="Everything your property needs to stay efficient, occupied, and professionally managed — under one dependable partner."
+      [center]="true"
+    />
+    <div class="service-grid">
+      @for (service of services; track service.slug) {
+        <div appReveal>
+          <app-service-card [service]="service" />
+        </div>
+      }
+    </div>
+    <div class="services-more">
+      <a routerLink="/services" class="btn btn--secondary">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Founder Spotlight ============ -->
+<section class="section section--deep founder">
+  <div class="container founder__inner">
+    <div class="founder__media" appReveal>
+      <div class="founder__portrait">
+        <!-- Founder photo placeholder — swap for a real portrait when available. -->
+        <span class="founder__initials" aria-hidden="true">SW</span>
+      </div>
+      <div class="founder__namecard">
+        <strong>Sheila Wanjiku</strong>
+        <span>Owner &amp; Real Estate Consultant</span>
+      </div>
+    </div>
+
+    <div class="founder__content" [appReveal]="120">
+      <span class="eyebrow">Founder Spotlight</span>
+      <h2>Meet Sheila Wanjiku</h2>
+      <p class="lead">
+        A real estate consultant and property management professional with experience overseeing
+        residential and commercial properties.
+      </p>
+      <p>
+        Sheila works closely with landlords, developers, tenants, and businesses to ensure
+        properties remain efficient, occupied, and professionally managed — bringing a trusted,
+        advisory approach to every engagement.
+      </p>
+      <ul class="founder__skills">
+        @for (skill of expertise; track skill) {
+          <li>{{ skill }}</li>
+        }
+      </ul>
+      <div class="founder__actions">
+        <a routerLink="/about" class="btn btn--secondary">Read Full Profile</a>
+        <!-- TODO: set CONTACT.founderLinkedIn to Sheila's LinkedIn URL -->
+        <a [href]="contact.founderLinkedIn" class="btn btn--light" rel="noopener" target="_blank">
+          Connect on LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Why Choose Us ============ -->
+<section class="section section--tint">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Why SleekSpace"
+      title="The difference of hands-on management"
+      lead="Clients choose us for a personal, accountable approach that puts the health of your property first."
+      [center]="true"
+    />
+    <ul class="why-grid">
+      @for (reason of whyChoose; track reason) {
+        <li appReveal>
+          <span class="why-check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                 stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 13l4 4L19 7" />
+            </svg>
+          </span>
+          {{ reason }}
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<!-- ============ Management Process ============ -->
+<section class="section">
+  <div class="container">
+    <app-section-heading
+      eyebrow="How We Work"
+      title="Our management process"
+      lead="A clear, repeatable approach that keeps your property running well from day one."
+      [center]="true"
+    />
+    <ol class="timeline">
+      @for (step of process; track step.step) {
+        <li class="timeline__item" appReveal>
+          <span class="timeline__num">{{ step.step }}</span>
+          <div class="timeline__body">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.description }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<!-- ============ Contact CTA ============ -->
+<div class="container">
+  <app-cta-banner
+    eyebrow="Ready When You Are"
+    title="Let’s keep your property well-managed"
+    text="Request a consultation and discover how dependable, hands-on management protects your investment."
+  />
+</div>

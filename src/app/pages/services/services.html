@@ -1,0 +1,73 @@
+<!-- ============ Page header ============ -->
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Our Services</span>
+    <h1>Everything your property needs</h1>
+    <p class="lead">
+      A complete range of property and facilities management services — delivered with a hands-on,
+      professional approach that keeps your property efficient, occupied, and well-maintained.
+    </p>
+  </div>
+</section>
+
+<!-- ============ Services grid ============ -->
+<section class="section">
+  <div class="container">
+    <div class="services-grid">
+      @for (service of services; track service.slug) {
+        <div appReveal>
+          <app-service-card [service]="service" [expanded]="true" />
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ============ Who we serve ============ -->
+<section class="section section--tint">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Who We Serve"
+      title="Tailored to the people behind every property"
+      lead="Our services adapt to the priorities of owners, developers, communities, and businesses."
+      [center]="true"
+    />
+    <ul class="audience-grid">
+      @for (item of audiences; track item.title) {
+        <li class="audience-card" appReveal>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<!-- ============ Process ============ -->
+<section class="section">
+  <div class="container">
+    <app-section-heading
+      eyebrow="How We Work"
+      title="A clear path from assessment to improvement"
+      [center]="true"
+    />
+    <ol class="process-row">
+      @for (step of process; track step.step) {
+        <li class="process-step" appReveal>
+          <span class="process-step__num">{{ step.step }}</span>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<div class="container">
+  <app-cta-banner
+    eyebrow="Get Started"
+    title="Need a service not listed here?"
+    text="Tell us about your property and we’ll tailor a management plan that fits. Request a consultation today."
+  />
+</div>

@@ -1,0 +1,130 @@
+.site-footer {
+  background: var(--color-deep);
+  color: color-mix(in srgb, var(--bg-primary) 82%, transparent);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.4fr;
+  gap: 3rem;
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.25rem;
+}
+
+.footer-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+}
+
+.footer-name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--bg-secondary);
+}
+
+.footer-desc {
+  max-width: 38ch;
+  color: color-mix(in srgb, var(--bg-primary) 70%, transparent);
+}
+
+.social {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--bg-primary) 22%, transparent);
+  color: var(--color-secondary);
+  transition: var(--transition);
+}
+
+.social a:hover {
+  background: var(--color-secondary);
+  color: var(--color-deep);
+  border-color: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+.footer-heading {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: 1.1rem;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer-col a {
+  color: color-mix(in srgb, var(--bg-primary) 78%, transparent);
+  transition: color var(--transition);
+}
+
+.footer-col a:hover {
+  color: var(--bg-secondary);
+}
+
+.contact-list li {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--bg-primary) 55%, transparent);
+}
+
+.footer-cta {
+  margin-top: 1.5rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid color-mix(in srgb, var(--bg-primary) 14%, transparent);
+}
+
+.footer-bottom__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.5rem;
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--bg-primary) 60%, transparent);
+}
+
+.footer-bottom__inner p {
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .footer-bottom__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

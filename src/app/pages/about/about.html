@@ -1,0 +1,164 @@
+<!-- ============ Page header ============ -->
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">About SleekSpace</span>
+    <h1>Dependable management, built on trust</h1>
+    <p class="lead">
+      We exist to keep properties well-run and well-maintained — combining professionalism,
+      reliability, and a genuinely hands-on approach to protect value and improve everyday life
+      for owners and residents.
+    </p>
+  </div>
+</section>
+
+<!-- ============ Company Story ============ -->
+<section class="section section--tint">
+  <div class="container story">
+    <div class="story__text" appReveal>
+      <span class="eyebrow">Our Story</span>
+      <h2>A property management partner you can rely on</h2>
+      <p>
+        SleekSpace Management is a property management company focused on keeping residential and
+        commercial properties well-run, well-maintained, and comfortable for the people who use
+        them every day.
+      </p>
+      <p>
+        We work closely with property owners, developers, landlords, and residents to ensure smooth
+        operations and high standards across every property under management. Our services span
+        service charge management, maintenance coordination, tenant relations, inspections, vendor
+        management, and day-to-day property operations.
+      </p>
+      <p>
+        Above all, we take a hands-on approach — helping clients protect long-term property value
+        while creating well-managed environments where tenants and residents are glad to be.
+      </p>
+    </div>
+    <aside class="story__aside" [appReveal]="120">
+      <div class="story__panel">
+        <img src="logo.png" alt="SleekSpace Management" width="120" height="120" />
+        <blockquote>
+          “Well-run, well-maintained, and comfortable — for the people who use these spaces every
+          day.”
+        </blockquote>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ Founder Profile ============ -->
+<section class="section founder-profile" id="founder">
+  <div class="container founder-profile__inner">
+    <div class="founder-profile__media" appReveal>
+      <div class="founder-profile__portrait">
+        <!-- Founder photo placeholder — swap for a real portrait when available. -->
+        <span aria-hidden="true">SW</span>
+      </div>
+      <div class="founder-profile__namecard">
+        <strong>Sheila Wanjiku</strong>
+        <span>Owner &amp; Real Estate Consultant</span>
+        <!-- TODO: set CONTACT.founderLinkedIn to Sheila's LinkedIn URL -->
+        <a [href]="contact.founderLinkedIn" class="founder-profile__linkedin" rel="noopener" target="_blank">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+            <path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.5 8h4V24h-4V8zM8 8h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1V24h-4v-7.1c0-1.7-.03-3.9-2.38-3.9-2.38 0-2.75 1.86-2.75 3.78V24H8V8z"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <div class="founder-profile__content" [appReveal]="120">
+      <span class="eyebrow">Founder Profile</span>
+      <h2>Sheila Wanjiku</h2>
+      <p class="founder-profile__role">Owner | Real Estate Consultant</p>
+      <p class="lead">
+        Sheila Wanjiku is a real estate consultant and property management professional with
+        experience overseeing residential and commercial properties.
+      </p>
+      <p>
+        She works closely with landlords, developers, tenants, and businesses to ensure properties
+        remain efficient, occupied, and professionally managed — acting as a trusted advisor across
+        every stage of the property lifecycle.
+      </p>
+
+      <h3 class="founder-profile__subhead">Areas of expertise</h3>
+      <ul class="expertise-grid">
+        @for (skill of expertise; track skill) {
+          <li>
+            <span class="expertise-dot" aria-hidden="true"></span>
+            {{ skill }}
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Mission & Vision ============ -->
+<section class="section section--tint">
+  <div class="container mv-grid">
+    <article class="mv-card" appReveal>
+      <span class="mv-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor"
+             stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9" />
+          <circle cx="12" cy="12" r="4.5" />
+          <circle cx="12" cy="12" r="0.6" fill="currentColor" />
+        </svg>
+      </span>
+      <h2>Our Mission</h2>
+      <p>
+        To provide dependable and professional property management services that add value to
+        properties and improve everyday experiences for owners and residents.
+      </p>
+    </article>
+
+    <article class="mv-card" [appReveal]="120">
+      <span class="mv-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor"
+             stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+      </span>
+      <h2>Our Vision</h2>
+      <p>
+        To build a reputation for reliable service, professionalism, and well-managed spaces.
+      </p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ Core Values ============ -->
+<section class="section">
+  <div class="container">
+    <app-section-heading
+      eyebrow="What We Stand For"
+      title="Our core values"
+      lead="The principles that guide every property we manage and every relationship we build."
+      [center]="true"
+    />
+    <ul class="values-grid">
+      @for (value of values; track value.title) {
+        <li class="value-card" appReveal>
+          <span class="value-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path [attr.d]="value.iconPath" />
+            </svg>
+          </span>
+          <h3>{{ value.title }}</h3>
+          <p>{{ value.description }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<div class="container">
+  <app-cta-banner
+    eyebrow="Work With Us"
+    title="Partner with a team that cares for your property"
+    text="Let’s talk about how SleekSpace Management can keep your property efficient, occupied, and professionally run."
+  />
+</div>

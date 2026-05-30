@@ -1,0 +1,42 @@
+<header class="site-header" [class.is-scrolled]="scrolled()" [class.is-open]="menuOpen()">
+  <div class="container header-inner">
+    <a routerLink="/" class="brand" aria-label="SleekSpace Management — home" (click)="closeMenu()">
+      <img src="logo.png" alt="SleekSpace Management" class="brand-logo" width="44" height="44" />
+      <span class="brand-text">
+        <span class="brand-name">SleekSpace</span>
+        <span class="brand-tag">Management</span>
+      </span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="primary-nav"
+      (click)="toggleMenu()"
+    >
+      <span class="visually-hidden">Toggle menu</span>
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+    </button>
+
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+      <ul class="nav-list">
+        @for (item of navItems; track item.path) {
+          <li>
+            <a
+              [routerLink]="item.path"
+              routerLinkActive="is-active"
+              [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+              (click)="closeMenu()"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+      <a routerLink="/contact" class="btn btn--primary nav-cta" (click)="closeMenu()">
+        Request Consultation
+      </a>
+    </nav>
+  </div>
+</header>

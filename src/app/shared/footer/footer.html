@@ -1,0 +1,75 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a routerLink="/" class="brand" aria-label="SleekSpace Management — home">
+        <img src="logo.png" alt="SleekSpace Management" class="footer-logo" width="56" height="56" />
+        <span class="footer-name">SleekSpace Management</span>
+      </a>
+      <p class="footer-desc">
+        Dependable, professional property management that protects long-term value and creates
+        well-run spaces for owners and residents.
+      </p>
+      <ul class="social" aria-label="Social media">
+        <li>
+          <!-- TODO: replace # with the company LinkedIn page -->
+          <a href="#" aria-label="LinkedIn" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.5 8h4V24h-4V8zM8 8h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1V24h-4v-7.1c0-1.7-.03-3.9-2.38-3.9-2.38 0-2.75 1.86-2.75 3.78V24H8V8z"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="Instagram" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="Facebook" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H17V3.6c-.3-.04-1.3-.13-2.46-.13-2.44 0-4.1 1.49-4.1 4.22V9.9H7.7V13h2.74v8h3.06z"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <nav class="footer-col" aria-label="Footer">
+      <h3 class="footer-heading">Explore</h3>
+      <ul>
+        @for (item of nav; track item.path) {
+          <li><a [routerLink]="item.path">{{ item.label }}</a></li>
+        }
+      </ul>
+    </nav>
+
+    <div class="footer-col">
+      <h3 class="footer-heading">Contact</h3>
+      <ul class="contact-list">
+        <li>
+          <span class="contact-label">Email</span>
+          <a [href]="'mailto:' + contact.email">{{ contact.email }}</a>
+        </li>
+        <li>
+          <span class="contact-label">Phone</span>
+          <a [href]="'tel:' + contact.phone">{{ contact.phone }}</a>
+        </li>
+        <li>
+          <span class="contact-label">Address</span>
+          <span>{{ contact.address }}</span>
+        </li>
+      </ul>
+      <a routerLink="/contact" class="btn btn--secondary footer-cta">Request Consultation</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom__inner">
+      <p>&copy; {{ year }} SleekSpace Management. All rights reserved.</p>
+      <p class="footer-meta">Property Management &amp; Real Estate Consulting</p>
+    </div>
+  </div>
+</footer>
