@@ -1,26 +1,69 @@
+<!-- ============ Director Welcome (page opener) ============ -->
+<section class="section section--deep founder">
+  <div class="container founder__inner">
+    <div class="founder__media" appReveal>
+      <div class="founder__portrait">
+        @if (director.photoHome) {
+          <img
+            [ngSrc]="director.photoHome"
+            fill
+            priority
+            [alt]="director.name + ', ' + director.role"
+          />
+        } @else {
+          <span class="founder__initials" aria-hidden="true">{{ director.initials }}</span>
+        }
+      </div>
+      <div class="founder__namecard">
+        <strong>{{ director.name }}</strong>
+        <span>{{ director.role }}</span>
+      </div>
+    </div>
+
+    <div class="founder__content" [appReveal]="120">
+      <span class="eyebrow">Welcome to SleekSpace Management</span>
+      <h2>Your property, in capable hands</h2>
+      <p class="lead">
+        At SleekSpace Management, we look after residential, commercial, and
+        mixed-use properties — keeping them well-run, well-maintained, and comfortable for the people
+        who use them every day.
+      </p>
+      <p>
+        From day-to-day operations and facilities management to tenant relations, service charge
+        administration, and development handover, our focus is simple: protect your property’s value
+        and give you complete peace of mind. We’d love to hear about your property and how we can
+        help.
+      </p>
+      <p class="founder__signature">
+        {{ director.name }}
+        <span>{{ director.role }}</span>
+      </p>
+      <div class="founder__actions">
+        <a routerLink="/contact" class="btn btn--secondary">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ Hero ============ -->
 <section class="hero">
   <div class="container hero__inner">
     <div class="hero__content">
-      <span class="eyebrow">Property Management &amp; Real Estate Consulting</span>
+      <span class="eyebrow">Property &amp; Facilities Management</span>
       <h1>Well-run spaces, <span class="accent">expertly managed.</span></h1>
       <p class="lead">
-        SleekSpace Management keeps residential and commercial properties well-run,
+        SleekSpace Management keeps residential, commercial, and mixed-use properties well-run,
         well-maintained, and comfortable for the people who use them every day — protecting
         long-term value through a hands-on, professional approach.
       </p>
-      <div class="hero__actions">
-        <a routerLink="/contact" class="btn btn--primary">Request Consultation</a>
-        <a routerLink="/services" class="btn btn--ghost">Explore Our Services</a>
-      </div>
       <dl class="hero__stats">
         <div>
           <dt>Residential &amp; Commercial</dt>
           <dd>Properties managed end-to-end</dd>
         </div>
         <div>
-          <dt>Hands-on</dt>
-          <dd>Direct founder involvement</dd>
+          <dt>Director-led</dt>
+          <dd>Hands-on, experienced management</dd>
         </div>
         <div>
           <dt>Transparent</dt>
@@ -34,7 +77,6 @@
         <img
           ngSrc="images/hero-feature.webp"
           fill
-          priority
           alt="Lavington Avenue, a commercial development managed by SleekSpace Management"
         />
         <figcaption class="hero__photo-badge">
@@ -96,49 +138,6 @@
     </div>
     <div class="services-more">
       <a routerLink="/services" class="btn btn--secondary">View All Services</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ Leadership / Director ============ -->
-<section class="section section--deep founder">
-  <div class="container founder__inner">
-    <div class="founder__media" appReveal>
-      <div class="founder__portrait">
-        @if (director.photoHome) {
-          <img [ngSrc]="director.photoHome" fill [alt]="director.name + ', ' + director.role" />
-        } @else {
-          <span class="founder__initials" aria-hidden="true">{{ director.initials }}</span>
-        }
-      </div>
-      <div class="founder__namecard">
-        <strong>{{ director.name }}</strong>
-        <span>{{ director.role }}</span>
-      </div>
-    </div>
-
-    <div class="founder__content" [appReveal]="120">
-      <span class="eyebrow">Leadership</span>
-      <h2>Led by an experienced professional</h2>
-      <p class="lead">
-        {{ director.bio[0] }}
-      </p>
-      <p>
-        As Director of SleekSpace Management, {{ director.name }} brings a strong background in
-        property operations, tenant relations, facilities management, and construction project
-        coordination.
-      </p>
-      <ul class="founder__skills">
-        @for (skill of expertise; track skill) {
-          <li>{{ skill }}</li>
-        }
-      </ul>
-      <div class="founder__actions">
-        <a routerLink="/about" class="btn btn--secondary">Meet the Director</a>
-        <a [href]="contact.linkedIn" class="btn btn--light" rel="noopener" target="_blank">
-          Connect on LinkedIn
-        </a>
-      </div>
     </div>
   </div>
 </section>

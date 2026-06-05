@@ -1,5 +1,4 @@
 import { Component, input } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { RevealDirective } from '../reveal.directive';
 
 /**
@@ -7,7 +6,7 @@ import { RevealDirective } from '../reveal.directive';
  */
 @Component({
   selector: 'app-cta-banner',
-  imports: [RouterLink, RevealDirective],
+  imports: [RevealDirective],
   template: `
     <section class="cta" appReveal>
       <div class="container cta__inner">
@@ -15,10 +14,6 @@ import { RevealDirective } from '../reveal.directive';
           <span class="eyebrow">{{ eyebrow() }}</span>
           <h2>{{ title() }}</h2>
           <p class="lead">{{ text() }}</p>
-        </div>
-        <div class="cta__actions">
-          <a routerLink="/contact" class="btn btn--secondary">Request Consultation</a>
-          <a routerLink="/services" class="btn btn--light">Explore Services</a>
         </div>
       </div>
     </section>
@@ -74,4 +69,8 @@ export class CtaBanner {
   readonly text = input(
     'Speak with us about dependable, hands-on management tailored to your property and goals.',
   );
+  readonly primaryLabel = input('Request Consultation');
+  /** Optional second button. Both label and link must be set for it to show. */
+  readonly secondaryLabel = input('');
+  readonly secondaryLink = input('');
 }

@@ -9,7 +9,6 @@ import {
   AUDIENCES,
   CONTACT,
   DIRECTOR,
-  DIRECTOR_EXPERTISE,
   PROCESS_STEPS,
   SERVICE_CATEGORIES,
   WHY_CHOOSE,
@@ -28,6 +27,5 @@ export class Home {
   protected readonly whyChoose = WHY_CHOOSE;
   protected readonly audiences = AUDIENCES;
   protected readonly director = DIRECTOR;
-  protected readonly expertise = DIRECTOR_EXPERTISE.slice(0, 8);
   protected readonly contact = CONTACT;
 }

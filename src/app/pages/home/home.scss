@@ -29,14 +29,7 @@
 }
 
 .hero .lead {
-  margin-bottom: 2rem;
-}
-
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2.75rem;
+  margin-bottom: 2.5rem;
 }
 
 .hero__stats {
@@ -177,10 +170,26 @@
 
 .founder__media {
   position: relative;
+  /* Explicit width is required: the portrait's only child is an absolutely
+     positioned (fill) image, so without this the box collapses to 0 width. */
+  width: 100%;
+  max-width: 390px;
+  margin-inline: auto;
+}
+
+/* Offset gold accent frame for a premium, prominent feel. */
+.founder__media::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  inset: 22px -22px -22px 22px;
+  border: 2px solid color-mix(in srgb, var(--color-secondary) 75%, transparent);
+  border-radius: var(--radius-lg);
 }
 
 .founder__portrait {
   position: relative;
+  z-index: 1;
   aspect-ratio: 4 / 5;
   border-radius: var(--radius-lg);
   background:
@@ -208,6 +217,7 @@
 
 .founder__namecard {
   position: absolute;
+  z-index: 2;
   bottom: -1.25rem;
   left: 50%;
   transform: translateX(-50%);
@@ -242,19 +252,21 @@
   color: color-mix(in srgb, var(--bg-primary) 72%, transparent);
 }
 
-.founder__skills {
+.founder__signature {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin: 1.5rem 0 2rem;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin: 1.75rem 0 2rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--color-secondary-hover);
 }
 
-.founder__skills li {
+.founder__signature span {
+  font-family: var(--font-body);
   font-size: 0.82rem;
-  padding: 0.45rem 0.95rem;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--bg-primary) 28%, transparent);
-  color: var(--color-secondary-hover);
+  letter-spacing: 0.05em;
+  color: color-mix(in srgb, var(--bg-primary) 70%, transparent);
 }
 
 .founder__actions {
@@ -375,10 +387,19 @@
   .hero__visual {
     order: -1;
   }
+  /* Center the portrait above the text and give the namecard breathing room. */
   .founder__media {
-    max-width: 360px;
-    margin-inline: auto;
-    margin-bottom: 2.5rem;
+    max-width: 340px;
+    margin-bottom: 3rem;
+  }
+  .founder__content {
+    text-align: center;
+  }
+  .founder__signature {
+    align-items: center;
+  }
+  .founder__actions {
+    justify-content: center;
   }
 }
 
@@ -387,5 +408,9 @@
   .why-grid,
   .audience-list {
     grid-template-columns: 1fr;
+  }
+  /* Drop the offset accent frame on very small screens to avoid overflow. */
+  .founder__media::before {
+    display: none;
   }
 }
