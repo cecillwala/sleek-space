@@ -38,6 +38,37 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/portfolio/portfolio').then((m) => m.Portfolio),
   },
   {
+    path: 'blog',
+    title: 'Insights',
+    data: {
+      description:
+        'Insights on property management, facilities operations, and real estate consulting from SleekSpace Management.',
+    },
+    loadComponent: () => import('./pages/blog/blog-list').then((m) => m.BlogList),
+  },
+  {
+    // Editor pages — must precede 'blog/:slug' so they aren't read as slugs.
+    path: 'blog/admin',
+    title: 'Blog Manager',
+    loadComponent: () => import('./pages/blog/blog-admin').then((m) => m.BlogAdmin),
+  },
+  {
+    path: 'blog/admin/new',
+    title: 'Write Article',
+    loadComponent: () => import('./pages/blog/blog-editor').then((m) => m.BlogEditor),
+  },
+  {
+    path: 'blog/admin/edit/:slug',
+    title: 'Edit Article',
+    loadComponent: () => import('./pages/blog/blog-editor').then((m) => m.BlogEditor),
+  },
+  {
+    path: 'blog/:slug',
+    // Title + description are set dynamically from the post in BlogPost.
+    title: 'Insights',
+    loadComponent: () => import('./pages/blog/blog-post').then((m) => m.BlogPost),
+  },
+  {
     path: 'contact',
     title: 'Contact',
     data: {

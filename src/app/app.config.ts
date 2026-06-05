@@ -3,7 +3,12 @@ import {
   provideBrowserGlobalErrorListeners,
   provideZonelessChangeDetection,
 } from '@angular/core';
-import { provideRouter, withInMemoryScrolling, withViewTransitions } from '@angular/router';
+import {
+  provideRouter,
+  withComponentInputBinding,
+  withInMemoryScrolling,
+  withViewTransitions,
+} from '@angular/router';
 import { TitleStrategy } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -17,6 +22,7 @@ export const appConfig: ApplicationConfig = {
       routes,
       withInMemoryScrolling({ scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled' }),
       withViewTransitions(),
+      withComponentInputBinding(),
     ),
     { provide: TitleStrategy, useClass: SeoTitleStrategy },
   ],

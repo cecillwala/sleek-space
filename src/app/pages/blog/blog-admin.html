@@ -1,0 +1,71 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Blog Manager</span>
+    <h1>Your articles</h1>
+    <p class="lead">
+      Write and edit articles here — no technical knowledge needed. Your work is saved in this
+      browser so you can preview it instantly. When you’re happy, use <strong>Publish</strong> at the
+      bottom to make it live for everyone.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container admin">
+    <div class="admin__bar">
+      <h2>{{ posts().length }} article{{ posts().length === 1 ? '' : 's' }}</h2>
+      <a routerLink="/blog/admin/new" class="btn btn--primary">+ Write a new article</a>
+    </div>
+
+    <ul class="admin__posts">
+      @for (post of posts(); track post.slug) {
+        <li class="admin__post">
+          <div class="admin__post-main">
+            <strong>{{ post.title }}</strong>
+            <span class="admin__meta">
+              @if (store.isBuiltIn(post.slug) && store.hasLocal(post.slug)) {
+                <span class="badge badge--edit">Edited</span>
+              } @else if (store.isBuiltIn(post.slug)) {
+                <span class="badge">Published</span>
+              } @else {
+                <span class="badge badge--draft">Draft (this browser)</span>
+              }
+              <span class="admin__cat">{{ post.category }}</span>
+            </span>
+          </div>
+          <div class="admin__post-actions">
+            <a [routerLink]="['/blog', post.slug]" target="_blank" class="link">Preview ↗</a>
+            <a [routerLink]="['/blog/admin/edit', post.slug]" class="link">Edit</a>
+            @if (store.hasLocal(post.slug)) {
+              <button type="button" class="link link--danger" (click)="deletePost(post.slug)">
+                {{ store.isBuiltIn(post.slug) ? 'Undo changes' : 'Delete' }}
+              </button>
+            }
+          </div>
+        </li>
+      }
+    </ul>
+
+    <!-- Publish -->
+    <div class="admin__publish">
+      <h3>Publish to everyone</h3>
+      <p>
+        Your articles are saved in this browser. To make them live for all visitors, click
+        <strong>Prepare publish file</strong>, then send the copied text to your developer (or paste
+        it into <code>blog-data.ts</code>) and deploy.
+      </p>
+      <div class="admin__publish-actions">
+        <button type="button" class="btn btn--secondary" (click)="exportAll()">
+          Prepare publish file
+        </button>
+        <button type="button" class="btn btn--ghost" (click)="copyExport()">Copy</button>
+      </div>
+      @if (statusMsg()) {
+        <p class="admin__status">{{ statusMsg() }}</p>
+      }
+      @if (exportText()) {
+        <textarea class="admin__export-text" rows="10" readonly>{{ exportText() }}</textarea>
+      }
+    </div>
+  </div>
+</section>

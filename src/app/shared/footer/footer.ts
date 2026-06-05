@@ -17,6 +17,7 @@ export class Footer {
     { label: 'About', path: '/about' },
     { label: 'Services', path: '/services' },
     { label: 'Portfolio', path: '/portfolio' },
+    { label: 'Blog', path: '/blog' },
     { label: 'Contact', path: '/contact' },
   ];
 }

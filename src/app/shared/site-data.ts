@@ -314,7 +314,7 @@ export const PORTFOLIO: PortfolioProperty[] = [
     category: 'Residential',
     image: 'images/portfolio-pyramid-pointe.webp',
   },
-  { name: 'Pyramid Grove', category: 'Residential' },
+  { name: 'Pyramid Grove', category: 'Residential', image: 'images/portfolio-pyramid-grove.webp' },
 ];
 
 /**
@@ -341,6 +341,33 @@ export const TENANT_BRANDS: string[] = [
 ];
 
 /* ---------------------------------------------------------------------------
+ * Instagram reels
+ * ------------------------------------------------------------------------- */
+export interface ReelItem {
+  /** Instagram reel/post URL. When set, the card links straight to the reel. */
+  url?: string;
+  /**
+   * Optional cover image (a screenshot/still from the reel). When set, the card
+   * shows a rich visual preview; otherwise it falls back to a branded tile.
+   */
+  thumbnail?: string;
+  /** Short label shown on the tile. */
+  caption?: string;
+}
+
+/**
+ * Placeholders for now. To make a tile live, add the reel `url` (and, ideally,
+ * a `thumbnail` image in public/images/reels/ for a full preview):
+ *   { url: 'https://www.instagram.com/reel/XXXX/', thumbnail: 'images/reels/1.webp', caption: '...' }
+ */
+export const REELS: ReelItem[] = [
+  { caption: 'Property walkthroughs' },
+  { caption: 'Maintenance in action' },
+  { caption: 'Tenant experience' },
+  { caption: 'Behind the scenes' },
+];
+
+/* ---------------------------------------------------------------------------
  * Contact
  * ------------------------------------------------------------------------- */
 export const CONTACT = {
@@ -348,4 +375,6 @@ export const CONTACT = {
   phone: '+254 704 207 860',
   address: 'Nairobi, Kenya',
   linkedIn: 'https://www.linkedin.com/in/sheila-g-723b47189',
+  // TODO: replace with the company Instagram profile URL when available.
+  instagram: '#',
 } as const;

@@ -1,0 +1,69 @@
+@if (post(); as post) {
+  <article class="post">
+    <!-- Header -->
+    <header class="post__header">
+      <div class="container post__header-inner">
+        <a routerLink="/blog" class="post__back">← All articles</a>
+        <span class="post__tag">{{ post.category }}</span>
+        <h1>{{ post.title }}</h1>
+        <p class="post__subtitle">{{ post.excerpt }}</p>
+        <p class="post__meta">
+          By {{ post.author }} &middot; {{ post.date | date: 'longDate' }} &middot;
+          {{ post.readMinutes }} min read
+        </p>
+      </div>
+    </header>
+
+    <!-- Hero image -->
+    <div class="container">
+      <figure class="post__hero">
+        <img [ngSrc]="post.heroImage" fill priority [alt]="post.title" />
+      </figure>
+    </div>
+
+    <!-- Body -->
+    <div class="container">
+      <div class="post__body">
+        @for (block of post.body; track $index) {
+          @switch (block.type) {
+            @case ('subheading') {
+              <h2>{{ block.text }}</h2>
+            }
+            @case ('quote') {
+              <blockquote>{{ block.text }}</blockquote>
+            }
+            @case ('image') {
+              <figure class="post__figure">
+                <img [src]="block.src" [alt]="block.alt" loading="lazy" />
+                @if (block.caption) {
+                  <figcaption>{{ block.caption }}</figcaption>
+                }
+              </figure>
+            }
+            @default {
+              <p>{{ block.text }}</p>
+            }
+          }
+        }
+      </div>
+
+      <!-- Footer / back -->
+      <div class="post__footer">
+        <p class="post__signoff">{{ post.author }}<span>Director, SleekSpace Management</span></p>
+        <div class="post__footer-actions">
+          <a routerLink="/blog" class="btn btn--ghost">← All articles</a>
+          <a routerLink="/contact" class="btn btn--primary">Request Consultation</a>
+        </div>
+      </div>
+    </div>
+  </article>
+} @else {
+  <section class="section">
+    <div class="container post__notfound">
+      <span class="eyebrow">Not found</span>
+      <h1>We couldn’t find that article</h1>
+      <p class="lead">It may have moved or been removed. Browse our latest insights instead.</p>
+      <a routerLink="/blog" class="btn btn--primary">View all articles</a>
+    </div>
+  </section>
+}

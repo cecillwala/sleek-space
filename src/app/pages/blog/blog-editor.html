@@ -1,0 +1,159 @@
+@if (notFound()) {
+  <section class="section">
+    <div class="container editor__notfound">
+      <h1>Article not found</h1>
+      <p class="lead">That article doesn’t exist. It may have been deleted.</p>
+      <a routerLink="/blog/admin" class="btn btn--primary">Back to articles</a>
+    </div>
+  </section>
+} @else {
+  <section class="page-hero">
+    <div class="container">
+      <a routerLink="/blog/admin" class="editor__back">← Back to articles</a>
+      <h1>{{ isEditing() ? 'Edit article' : 'Write a new article' }}</h1>
+      <p class="lead">
+        Fill in the details below. You can preview it any time, and nothing goes live until you
+        publish from the articles page.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <form class="container editor" [formGroup]="form" (ngSubmit)="save()" novalidate>
+      <!-- Basics -->
+      <div class="card">
+        <h2 class="card__title">The basics</h2>
+
+        <div class="field">
+          <label for="title">Article title</label>
+          <input id="title" type="text" formControlName="title" (input)="onTitleInput()"
+                 placeholder="e.g. How to Choose a Property Manager" />
+          @if (webAddress()) {
+            <p class="field-hint">Web address: <code>/blog/{{ webAddress() }}</code></p>
+          }
+        </div>
+
+        <div class="field">
+          <label for="excerpt">Short summary</label>
+          <textarea id="excerpt" rows="3" formControlName="excerpt"
+                    placeholder="One or two sentences shown on the blog list and at the top of the article."></textarea>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="category">Topic</label>
+            <select id="category" formControlName="category">
+              @for (c of categories; track c) {
+                <option [value]="c">{{ c }}</option>
+              }
+            </select>
+          </div>
+          <div class="field">
+            <label for="date">Date</label>
+            <input id="date" type="date" formControlName="date" />
+          </div>
+          <div class="field field--narrow">
+            <label for="readMinutes">Read time (min)</label>
+            <input id="readMinutes" type="number" min="1" formControlName="readMinutes" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="author">Author</label>
+          <input id="author" type="text" formControlName="author" />
+        </div>
+      </div>
+
+      <!-- Cover image -->
+      <div class="card">
+        <h2 class="card__title">Cover image</h2>
+        <p class="card__hint">This large image appears at the top of the article and on the blog list.</p>
+
+        @if (form.controls.heroImage.value) {
+          <div class="image-preview image-preview--hero">
+            <img [src]="form.controls.heroImage.value" alt="Cover preview" />
+          </div>
+        }
+
+        <label class="upload">
+          <input type="file" accept="image/*" (change)="onHeroFile($event)" />
+          <span class="btn btn--secondary">{{ form.controls.heroImage.value ? 'Change image' : 'Upload an image' }}</span>
+        </label>
+      </div>
+
+      <!-- Content -->
+      <div class="card">
+        <h2 class="card__title">Article content</h2>
+        <p class="card__hint">
+          Build your article from sections below. Add paragraphs, subheadings, highlighted quotes,
+          and images in any order.
+        </p>
+
+        <div formArrayName="blocks">
+          @for (block of blocks.controls; track block; let i = $index) {
+            <div class="block" [formGroupName]="i">
+              <div class="block__bar">
+                <span class="block__label">
+                  @switch (blockType(i)) {
+                    @case ('subheading') { Subheading }
+                    @case ('quote') { Highlighted quote }
+                    @case ('image') { Image }
+                    @default { Paragraph }
+                  }
+                </span>
+                <span class="block__tools">
+                  <button type="button" (click)="moveBlock(i, -1)" title="Move up" aria-label="Move up">↑</button>
+                  <button type="button" (click)="moveBlock(i, 1)" title="Move down" aria-label="Move down">↓</button>
+                  <button type="button" class="block__remove" (click)="removeBlock(i)" title="Remove" aria-label="Remove">Remove</button>
+                </span>
+              </div>
+
+              @switch (blockType(i)) {
+                @case ('image') {
+                  @if (block.controls['src'].value) {
+                    <div class="image-preview">
+                      <img [src]="block.controls['src'].value" alt="Image preview" />
+                    </div>
+                  }
+                  <label class="upload">
+                    <input type="file" accept="image/*" (change)="onBlockFile($event, i)" />
+                    <span class="btn btn--ghost">{{ block.controls['src'].value ? 'Change image' : 'Upload an image' }}</span>
+                  </label>
+                  <input type="text" formControlName="alt" placeholder="Describe the image (for accessibility)" />
+                  <input type="text" formControlName="caption" placeholder="Caption shown under the image (optional)" />
+                }
+                @case ('quote') {
+                  <textarea formControlName="text" rows="3"
+                            placeholder="A short, memorable line — shown large and in italics."></textarea>
+                }
+                @case ('subheading') {
+                  <input type="text" formControlName="text" placeholder="Section heading" />
+                }
+                @default {
+                  <textarea formControlName="text" rows="8" placeholder="Write your paragraph here…"></textarea>
+                }
+              }
+            </div>
+          }
+        </div>
+
+        <div class="block-add">
+          <span>Add section:</span>
+          <button type="button" (click)="addBlock('paragraph')">+ Paragraph</button>
+          <button type="button" (click)="addBlock('subheading')">+ Subheading</button>
+          <button type="button" (click)="addBlock('quote')">+ Quote</button>
+          <button type="button" (click)="addBlock('image')">+ Image</button>
+        </div>
+      </div>
+
+      @if (statusMsg()) {
+        <p class="editor__status">{{ statusMsg() }}</p>
+      }
+
+      <div class="editor__actions">
+        <button type="submit" class="btn btn--primary">{{ isEditing() ? 'Save changes' : 'Save article' }}</button>
+        <button type="button" class="btn btn--ghost" (click)="cancel()">Cancel</button>
+      </div>
+    </form>
+  </section>
+}
