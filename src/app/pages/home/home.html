@@ -29,16 +29,19 @@
       </dl>
     </div>
 
-    <div class="hero__visual" aria-hidden="true">
-      <div class="hero__card hero__card--logo">
-        <img src="logo.png" alt="" width="180" height="180" />
-      </div>
-      <!-- <div class="hero__card hero__card--badge hero__card--badge-1">
-        <span class="dot"></span> Reliable communication
-      </div>
-      <div class="hero__card hero__card--badge hero__card--badge-2">
-        <span class="dot"></span> Property value preserved
-      </div> -->
+    <div class="hero__visual">
+      <figure class="hero__photo">
+        <img
+          ngSrc="images/hero-feature.webp"
+          fill
+          priority
+          alt="Lavington Avenue, a commercial development managed by SleekSpace Management"
+        />
+        <figcaption class="hero__photo-badge">
+          <span class="hero__photo-name">Lavington Avenue</span>
+          <span class="hero__photo-loc">Commercial &middot; Nairobi</span>
+        </figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -48,16 +51,18 @@
   <div class="container about-overview">
     <div appReveal>
       <span class="eyebrow">Who We Are</span>
-      <h2>A trusted property management &amp; consulting firm</h2>
+      <h2>A professional property &amp; facilities management firm</h2>
       <p>
-        SleekSpace Management works closely with property owners, developers, landlords, and
-        residents to ensure smooth operations and high standards across every property under
-        management. From service charge management to maintenance, tenant relations, inspections,
-        and vendor coordination, we handle the day-to-day so you don’t have to.
+        SleekSpace Management is focused on maximizing property value, enhancing tenant
+        satisfaction, and ensuring seamless property operations. With experience spanning commercial
+        developments, residential estates, mixed-use properties, and facilities management, we
+        provide end-to-end solutions — from project completion and tenant onboarding to day-to-day
+        operations and maintenance.
       </p>
       <p>
-        Our hands-on approach helps clients protect long-term property value while creating
-        well-managed environments for tenants and residents.
+        Our hands-on approach combines property management, facilities operations, construction
+        project management, tenant relations, and service charge administration to create
+        well-managed, efficient, and profitable properties.
       </p>
       <a routerLink="/about" class="btn btn--ghost">More About Us</a>
     </div>
@@ -78,14 +83,14 @@
   <div class="container">
     <app-section-heading
       eyebrow="What We Do"
-      title="Comprehensive property management services"
-      lead="Everything your property needs to stay efficient, occupied, and professionally managed — under one dependable partner."
+      title="End-to-end property & facilities management"
+      lead="Five core areas of expertise that keep residential, commercial, and mixed-use properties efficient, occupied, and professionally managed — under one dependable partner."
       [center]="true"
     />
     <div class="service-grid">
-      @for (service of services; track service.slug) {
+      @for (category of categories; track category.slug) {
         <div appReveal>
-          <app-service-card [service]="service" />
+          <app-service-card [category]="category" />
         </div>
       }
     </div>
@@ -95,31 +100,33 @@
   </div>
 </section>
 
-<!-- ============ Founder Spotlight ============ -->
+<!-- ============ Leadership / Director ============ -->
 <section class="section section--deep founder">
   <div class="container founder__inner">
     <div class="founder__media" appReveal>
       <div class="founder__portrait">
-        <!-- Founder photo placeholder — swap for a real portrait when available. -->
-        <span class="founder__initials" aria-hidden="true">SW</span>
+        @if (director.photoHome) {
+          <img [ngSrc]="director.photoHome" fill [alt]="director.name + ', ' + director.role" />
+        } @else {
+          <span class="founder__initials" aria-hidden="true">{{ director.initials }}</span>
+        }
       </div>
       <div class="founder__namecard">
-        <strong>Sheila Wanjiku</strong>
-        <span>Owner &amp; Real Estate Consultant</span>
+        <strong>{{ director.name }}</strong>
+        <span>{{ director.role }}</span>
       </div>
     </div>
 
     <div class="founder__content" [appReveal]="120">
-      <span class="eyebrow">Founder Spotlight</span>
-      <h2>Meet Sheila Wanjiku</h2>
+      <span class="eyebrow">Leadership</span>
+      <h2>Led by an experienced professional</h2>
       <p class="lead">
-        A real estate consultant and property management professional with experience overseeing
-        residential and commercial properties.
+        {{ director.bio[0] }}
       </p>
       <p>
-        Sheila works closely with landlords, developers, tenants, and businesses to ensure
-        properties remain efficient, occupied, and professionally managed — bringing a trusted,
-        advisory approach to every engagement.
+        As Director of SleekSpace Management, {{ director.name }} brings a strong background in
+        property operations, tenant relations, facilities management, and construction project
+        coordination.
       </p>
       <ul class="founder__skills">
         @for (skill of expertise; track skill) {
@@ -127,9 +134,8 @@
         }
       </ul>
       <div class="founder__actions">
-        <a routerLink="/about" class="btn btn--secondary">Read Full Profile</a>
-        <!-- TODO: set CONTACT.founderLinkedIn to Sheila's LinkedIn URL -->
-        <a [href]="contact.founderLinkedIn" class="btn btn--light" rel="noopener" target="_blank">
+        <a routerLink="/about" class="btn btn--secondary">Meet the Director</a>
+        <a [href]="contact.linkedIn" class="btn btn--light" rel="noopener" target="_blank">
           Connect on LinkedIn
         </a>
       </div>

@@ -1,0 +1,64 @@
+<!-- ============ Page header ============ -->
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Our Work</span>
+    <h1>Selected Projects &amp; Properties</h1>
+    <p class="lead">
+      A selection of commercial and residential developments managed and supported by SleekSpace
+      Management across Kenya — spanning property operations, facilities management, and
+      development handover.
+    </p>
+  </div>
+</section>
+
+<!-- ============ Commercial ============ -->
+<section class="section">
+  <div class="container">
+    <app-section-heading eyebrow="Commercial" title="Commercial Properties" />
+    <div class="portfolio-grid">
+      @for (property of commercial; track property.name) {
+        <div appReveal>
+          <app-portfolio-card [property]="property" />
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ============ Residential ============ -->
+<section class="section section--tint">
+  <div class="container">
+    <app-section-heading eyebrow="Residential" title="Residential Properties" />
+    <div class="portfolio-grid">
+      @for (property of residential; track property.name) {
+        <div appReveal>
+          <app-portfolio-card [property]="property" />
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ============ Tenant & brand wall ============ -->
+<section class="section">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Notable Tenants & Brands"
+      title="Brands within properties we manage"
+      lead="A selection of notable tenants and brands successfully onboarded or managed within properties under our management."
+      [center]="true"
+    />
+    <div appReveal>
+      <app-brand-wall [brands]="brands" />
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<div class="container">
+  <app-cta-banner
+    eyebrow="Work With Us"
+    title="Add your property to our portfolio"
+    text="Let’s discuss how SleekSpace Management can manage and elevate your development."
+  />
+</div>

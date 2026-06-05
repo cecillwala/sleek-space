@@ -41,3 +41,8 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# High-resolution source photos (masters only — NOT used by the build).
+# The website serves the optimized WebP versions in public/images/.
+# Keep these backed up outside the repo (e.g. cloud storage).
+/src/app/shared/assets/

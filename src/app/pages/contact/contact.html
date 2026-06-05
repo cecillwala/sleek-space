@@ -60,6 +60,17 @@
             <span>{{ contact.address }}</span>
           </span>
         </li>
+        <li>
+          <span class="contact-info__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+              <path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.5 8h4V24h-4V8zM8 8h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1V24h-4v-7.1c0-1.7-.03-3.9-2.38-3.9-2.38 0-2.75 1.86-2.75 3.78V24H8V8z"/>
+            </svg>
+          </span>
+          <span>
+            <span class="contact-info__label">LinkedIn</span>
+            <a [href]="contact.linkedIn" rel="noopener" target="_blank">Sheila W. Gichangi</a>
+          </span>
+        </li>
       </ul>
 
       <!-- Google Maps placeholder -->

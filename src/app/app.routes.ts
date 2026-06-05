@@ -6,7 +6,7 @@ export const routes: Routes = [
     title: '',
     data: {
       description:
-        'Professional property management and real estate consulting focused on residential and commercial properties, tenant relations, maintenance, inspections, and operational excellence.',
+        'SleekSpace Management is a professional property and facilities management firm focused on residential, commercial, and mixed-use developments — maximizing value, tenant satisfaction, and operational excellence.',
     },
     loadComponent: () => import('./pages/home/home').then((m) => m.Home),
   },
@@ -15,7 +15,7 @@ export const routes: Routes = [
     title: 'About',
     data: {
       description:
-        'Meet SleekSpace Management and founder Sheila Wanjiku — a hands-on property management firm built on professionalism, reliability, transparency, and integrity.',
+        'Meet SleekSpace Management and Director Sheila W. Gichangi — an experienced property and facilities management professional leading a firm built on professionalism, integrity, and operational excellence.',
     },
     loadComponent: () => import('./pages/about/about').then((m) => m.About),
   },
@@ -24,22 +24,30 @@ export const routes: Routes = [
     title: 'Services',
     data: {
       description:
-        'Property management, facilities management, service charge administration, maintenance coordination, tenant relations, inspections, vendor coordination, and leasing support.',
+        'Property management, tenant management, facilities management, project & development support, and financial management for residential, commercial, and mixed-use properties.',
     },
     loadComponent: () => import('./pages/services/services').then((m) => m.Services),
+  },
+  {
+    path: 'portfolio',
+    title: 'Portfolio',
+    data: {
+      description:
+        'Selected commercial and residential projects and properties managed and supported by SleekSpace Management, alongside notable tenants and brands within properties under management.',
+    },
+    loadComponent: () => import('./pages/portfolio/portfolio').then((m) => m.Portfolio),
   },
   {
     path: 'contact',
     title: 'Contact',
     data: {
       description:
-        'Request a consultation with SleekSpace Management for dependable, professional property management of your residential or commercial property.',
+        'Request a consultation with SleekSpace Management for dependable, professional property and facilities management of your residential, commercial, or mixed-use property.',
     },
     loadComponent: () => import('./pages/contact/contact').then((m) => m.Contact),
   },
-  // Future-ready routes (testimonials, team, portfolio, blog) are intentionally
-  // omitted from navigation until real content is available. See
-  // shared/future/ for the placeholder components ready to be wired up.
+  // Further future-ready routes (testimonials, team, blog, case studies) remain
+  // omitted from navigation until real content is available. See shared/future/.
   {
     path: '**',
     redirectTo: '',

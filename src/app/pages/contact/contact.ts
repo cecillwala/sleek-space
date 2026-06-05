@@ -4,7 +4,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { CONTACT, SERVICES } from '../../shared/site-data';
+import { CONTACT, SERVICE_CATEGORIES } from '../../shared/site-data';
 import { RevealDirective } from '../../shared/reveal.directive';
 
 @Component({
@@ -17,7 +17,7 @@ export class Contact {
   private readonly fb = inject(FormBuilder);
 
   protected readonly contact = CONTACT;
-  protected readonly serviceOptions = SERVICES.map((s) => s.title);
+  protected readonly serviceOptions = SERVICE_CATEGORIES.map((s) => s.title);
   protected readonly submitted = signal(false);
 
   protected readonly form = this.fb.nonNullable.group({

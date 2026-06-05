@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { SectionHeading } from '../../shared/section-heading/section-heading';
 import { ServiceCard } from '../../shared/service-card/service-card';
@@ -7,24 +8,26 @@ import { RevealDirective } from '../../shared/reveal.directive';
 import {
   AUDIENCES,
   CONTACT,
-  FOUNDER_EXPERTISE,
+  DIRECTOR,
+  DIRECTOR_EXPERTISE,
   PROCESS_STEPS,
-  SERVICES,
+  SERVICE_CATEGORIES,
   WHY_CHOOSE,
 } from '../../shared/site-data';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, SectionHeading, ServiceCard, CtaBanner, RevealDirective],
+  imports: [RouterLink, NgOptimizedImage, SectionHeading, ServiceCard, CtaBanner, RevealDirective],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
 export class Home {
-  // Show the first six services on the homepage; full list lives on /services.
-  protected readonly services = SERVICES.slice(0, 6);
+  // All five service categories; full sub-service breakdown lives on /services.
+  protected readonly categories = SERVICE_CATEGORIES;
   protected readonly process = PROCESS_STEPS;
   protected readonly whyChoose = WHY_CHOOSE;
   protected readonly audiences = AUDIENCES;
-  protected readonly expertise = FOUNDER_EXPERTISE.slice(0, 6);
+  protected readonly director = DIRECTOR;
+  protected readonly expertise = DIRECTOR_EXPERTISE.slice(0, 8);
   protected readonly contact = CONTACT;
 }

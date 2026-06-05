@@ -2,10 +2,11 @@
 <section class="page-hero">
   <div class="container">
     <span class="eyebrow">Our Services</span>
-    <h1>Everything your property needs</h1>
+    <h1>End-to-end property &amp; facilities management</h1>
     <p class="lead">
-      A complete range of property and facilities management services — delivered with a hands-on,
-      professional approach that keeps your property efficient, occupied, and well-maintained.
+      A complete range of property and facilities management services — from project completion and
+      tenant onboarding to day-to-day operations, maintenance, and financial management. Organized
+      into five core areas of expertise.
     </p>
   </div>
 </section>
@@ -14,9 +15,9 @@
 <section class="section">
   <div class="container">
     <div class="services-grid">
-      @for (service of services; track service.slug) {
+      @for (category of categories; track category.slug) {
         <div appReveal>
-          <app-service-card [service]="service" [expanded]="true" />
+          <app-service-card [category]="category" [expanded]="true" />
         </div>
       }
     </div>

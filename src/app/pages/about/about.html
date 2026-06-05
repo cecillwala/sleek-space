@@ -2,39 +2,35 @@
 <section class="page-hero">
   <div class="container">
     <span class="eyebrow">About SleekSpace</span>
-    <h1>Dependable management, built on trust</h1>
+    <h1>An established property &amp; facilities management firm</h1>
     <p class="lead">
-      We exist to keep properties well-run and well-maintained — combining professionalism,
-      reliability, and a genuinely hands-on approach to protect value and improve everyday life
-      for owners and residents.
+      SleekSpace Management is a professional property and facilities management company focused on
+      maximizing property value, enhancing tenant satisfaction, and ensuring seamless property
+      operations across residential, commercial, and mixed-use developments.
     </p>
   </div>
 </section>
 
-<!-- ============ Founder Profile ============ -->
-<section class=”section founder-profile” id=”founder”>
-  <div class=”container founder-profile__inner”>
+<!-- ============ About the Director ============ -->
+<section class="section founder-profile" id="director">
+  <div class="container founder-profile__inner">
     <div class="founder-profile__media" appReveal>
       <div class="founder-profile__portrait">
-        <!-- Founder photo placeholder — swap for a real portrait when available. -->
-        <span aria-hidden="true">SW</span>
+        @if (director.photo) {
+          <img [ngSrc]="director.photo" fill [alt]="director.name + ', ' + director.role" />
+        } @else {
+          <span aria-hidden="true">{{ director.initials }}</span>
+        }
       </div>
-
     </div>
 
     <div class="founder-profile__content" [appReveal]="120">
-      <span class="eyebrow">Founder Profile</span>
-      <h2>Sheila Wanjiku</h2>
-      <p class="founder-profile__role">Owner | Real Estate Consultant</p>
-      <p class="lead">
-        Sheila Wanjiku is a real estate consultant and property management professional with
-        experience overseeing residential and commercial properties.
-      </p>
-      <p>
-        She works closely with landlords, developers, tenants, and businesses to ensure properties
-        remain efficient, occupied, and professionally managed — acting as a trusted advisor across
-        every stage of the property lifecycle.
-      </p>
+      <span class="eyebrow">About the Director</span>
+      <h2>{{ director.name }}</h2>
+      <p class="founder-profile__role">{{ director.role }}</p>
+      @for (para of director.bio; track $index) {
+        <p [class.lead]="$first">{{ para }}</p>
+      }
 
       <h3 class="founder-profile__subhead">Areas of expertise</h3>
       <ul class="expertise-grid">
@@ -49,34 +45,73 @@
   </div>
 </section>
 
+<!-- ============ Credentials & Memberships ============ -->
+<section class="section section--deep">
+  <div class="container">
+    <div class="director-quote" appReveal>
+      <svg viewBox="0 0 24 24" width="42" height="42" fill="currentColor" aria-hidden="true">
+        <path d="M7 7h4v4c0 3-1.5 5-4 6v-3c1-.5 1.5-1.5 1.5-3H7V7zm8 0h4v4c0 3-1.5 5-4 6v-3c1-.5 1.5-1.5 1.5-3H15V7z" />
+      </svg>
+      <blockquote>{{ director.quote }}</blockquote>
+      <cite>— {{ director.name }}, Director</cite>
+    </div>
+
+    <div class="credentials-grid">
+      <div class="credentials-card" appReveal>
+        <h3>Professional Memberships</h3>
+        <ul>
+          @for (item of memberships; track item.label) {
+            <li>
+              <strong>{{ item.label }}</strong>
+              <span>{{ item.detail }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+      <div class="credentials-card" [appReveal]="120">
+        <h3>Academic Qualifications</h3>
+        <ul>
+          @for (item of qualifications; track item.label) {
+            <li>
+              <strong>{{ item.label }}</strong>
+              <span>{{ item.detail }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ Company Story ============ -->
 <section class="section section--tint">
   <div class="container story">
     <div class="story__text" appReveal>
       <span class="eyebrow">Our Story</span>
-      <h2>A property management partner you can rely on</h2>
+      <h2>End-to-end property &amp; facilities solutions</h2>
       <p>
-        SleekSpace Management is a property management company focused on keeping residential and
-        commercial properties well-run, well-maintained, and comfortable for the people who use
-        them every day.
+        SleekSpace Management provides professional property and facilities management built on
+        operational excellence, tenant satisfaction, and long-term property value optimization. Our
+        experience spans commercial developments, residential estates, mixed-use properties, and
+        facilities management.
       </p>
       <p>
-        We work closely with property owners, developers, landlords, and residents to ensure smooth
-        operations and high standards across every property under management. Our services span
-        service charge management, maintenance coordination, tenant relations, inspections, vendor
-        management, and day-to-day property operations.
+        We deliver end-to-end solutions — from project completion and tenant onboarding to
+        day-to-day property operations and maintenance. Our expertise combines property management,
+        facilities operations, construction project management, tenant relations, and service
+        charge administration.
       </p>
       <p>
-        Above all, we take a hands-on approach — helping clients protect long-term property value
-        while creating well-managed environments where tenants and residents are glad to be.
+        The result is well-managed, efficient, and profitable properties — and lasting value for the
+        owners and investors who trust us with them.
       </p>
     </div>
     <aside class="story__aside" [appReveal]="120">
       <div class="story__panel">
         <img src="logo.png" alt="SleekSpace Management" width="120" height="120" />
         <blockquote>
-          "Well-run, well-maintained, and comfortable — for the people who use these spaces every
-          day."
+          "Maximizing property value, enhancing tenant satisfaction, and ensuring seamless
+          operations."
         </blockquote>
       </div>
     </aside>
@@ -84,7 +119,7 @@
 </section>
 
 <!-- ============ Mission & Vision ============ -->
-<section class="section section--tint">
+<section class="section">
   <div class="container mv-grid">
     <article class="mv-card" appReveal>
       <span class="mv-card__icon" aria-hidden="true">
@@ -97,8 +132,8 @@
       </span>
       <h2>Our Mission</h2>
       <p>
-        To provide dependable and professional property management services that add value to
-        properties and improve everyday experiences for owners and residents.
+        To provide dependable and professional property and facilities management services that add
+        value to properties and improve everyday experiences for owners, investors, and tenants.
       </p>
     </article>
 
@@ -112,14 +147,15 @@
       </span>
       <h2>Our Vision</h2>
       <p>
-        To build a reputation for reliable service, professionalism, and well-managed spaces.
+        To be a trusted leader in property and facilities management — known for reliable service,
+        professionalism, and well-managed spaces that create lasting value.
       </p>
     </article>
   </div>
 </section>
 
 <!-- ============ Core Values ============ -->
-<section class="section">
+<section class="section section--tint">
   <div class="container">
     <app-section-heading
       eyebrow="What We Stand For"
@@ -148,7 +184,7 @@
 <div class="container">
   <app-cta-banner
     eyebrow="Work With Us"
-    title="Partner with a team that cares for your property"
+    title="Partner with an experienced management team"
     text="Let’s talk about how SleekSpace Management can keep your property efficient, occupied, and professionally run."
   />
 </div>
