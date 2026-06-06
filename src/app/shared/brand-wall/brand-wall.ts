@@ -1,51 +1,132 @@
 import { Component, input } from '@angular/core';
+import { BrandItem } from '../site-data';
 
 /**
- * Reusable logo wall for notable tenants and brands. Renders text-based brand
- * chips today; when brand logo assets are available, extend the input to an
- * object with an optional `logo` and render an <img> in place of the name.
- * Easily expanded by adding to the supplied `brands` array.
+ * Infinite, auto-scrolling logo marquee for notable tenants and brands.
+ * Logos have no card/background and run in a calm monochrome, revealing full
+ * brand colour on hover (the strip also pauses on hover). The set is rendered
+ * twice so the loop is seamless. Brands without a logo show their name.
+ * Respects prefers-reduced-motion (becomes a manually-scrollable strip).
  */
 @Component({
   selector: 'app-brand-wall',
   template: `
     @if (brands().length) {
-      <ul class="brand-wall">
-        @for (brand of brands(); track brand) {
-          <li class="brand-wall__item">{{ brand }}</li>
-        }
-      </ul>
+      <div class="marquee" role="region" aria-label="Notable tenants and brands">
+        <div class="marquee__track">
+          <ul class="marquee__group">
+            @for (brand of brands(); track brand.name) {
+              <li class="brand" [title]="brand.name">
+                @if (brand.logo) {
+                  <img [src]="brand.logo" [alt]="brand.name" loading="lazy" decoding="async" />
+                } @else {
+                  <span class="brand__name">{{ brand.name }}</span>
+                }
+              </li>
+            }
+          </ul>
+          <ul class="marquee__group" aria-hidden="true">
+            @for (brand of brands(); track brand.name) {
+              <li class="brand">
+                @if (brand.logo) {
+                  <img [src]="brand.logo" [alt]="" loading="lazy" decoding="async" />
+                } @else {
+                  <span class="brand__name">{{ brand.name }}</span>
+                }
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
     }
   `,
   styles: `
-    .brand-wall {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 1rem;
+    .marquee {
+      overflow: hidden;
+      width: 100%;
+      /* Soft fade at both edges. */
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
     }
-    .brand-wall__item {
+    .marquee__track {
+      display: flex;
+      width: max-content;
+      animation: brand-scroll 48s linear infinite;
+    }
+    .marquee:hover .marquee__track {
+      animation-play-state: paused;
+    }
+    .marquee__group {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      flex-shrink: 0;
+    }
+    .brand {
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      min-height: 84px;
-      padding: 1rem 1.25rem;
-      background: var(--bg-card);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-sm);
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      font-weight: 500;
-      color: var(--color-text-main);
-      transition: var(--transition);
+      flex-shrink: 0;
+      height: 120px;
+      /* Uniform trailing gap only — keeps spacing identical at the loop seam. */
+      margin-right: clamp(2.75rem, 6vw, 5rem);
     }
-    .brand-wall__item:hover {
-      border-color: var(--color-secondary);
-      background: var(--bg-card-hover);
-      transform: translateY(-3px);
+    .brand img {
+      max-width: 100%;
+      max-height: 80px;
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(100%);
+      opacity: 0.6;
+      transition:
+        filter var(--transition),
+        opacity var(--transition);
+    }
+    .brand:hover img {
+      filter: none;
+      opacity: 1;
+    }
+    .brand__name {
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      opacity: 0.7;
+      transition:
+        color var(--transition),
+        opacity var(--transition);
+    }
+    .brand:hover .brand__name {
+      color: var(--color-primary);
+      opacity: 1;
+    }
+
+    @keyframes brand-scroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        /* Each group is the full set, so shifting one group width loops seamlessly. */
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .marquee {
+        overflow-x: auto;
+      }
+      .marquee__track {
+        animation: none;
+      }
+      .marquee__group[aria-hidden='true'] {
+        display: none;
+      }
     }
   `,
 })
 export class BrandWall {
-  readonly brands = input<string[]>([]);
+  readonly brands = input<BrandItem[]>([]);
 }

@@ -317,27 +317,33 @@ export const PORTFOLIO: PortfolioProperty[] = [
   { name: 'Pyramid Grove', category: 'Residential', image: 'images/portfolio-pyramid-grove.webp' },
 ];
 
+export interface BrandItem {
+  name: string;
+  /** Optional logo in public/images/brands/. Brands without one show as text. */
+  logo?: string;
+}
+
 /**
  * Notable tenants and brands successfully onboarded or managed within
- * properties under management. Logos to be added later — names render as a
- * text-based logo wall for now.
+ * properties under management. Logos render as a monochrome wall (full colour
+ * on hover); brands without a logo show their name.
  */
-export const TENANT_BRANDS: string[] = [
-  "CJ's",
-  'Simbisa Brands Kenya Ltd',
-  'Reliant Pharmacy',
-  'Pharmaplus',
-  'Sunny Forex Bureau Ltd',
-  'Cinnabon',
-  'Baus Opticals Ltd',
-  'Zucchini Greengrocers Ltd',
-  'White Rose Dry Cleaners',
-  'Chapacopy Ltd',
-  'Artcaffe',
-  'KFC Kenya',
-  'Cleanfax Dry Cleaners',
-  'Luxe Kaftan',
-  'Kidsydz',
+export const TENANT_BRANDS: BrandItem[] = [
+  { name: "CJ's", logo: 'images/brands/cjs.webp' },
+  { name: 'Simbisa Brands Kenya Ltd', logo: 'images/brands/simbisa.webp' },
+  { name: 'Pharmaplus', logo: 'images/brands/pharmaplus.webp' },
+  { name: 'Cinnabon', logo: 'images/brands/cinnabon.webp' },
+  { name: 'Optica', logo: 'images/brands/optica.webp' },
+  { name: 'Zucchini Greengrocers Ltd', logo: 'images/brands/zucchini.webp' },
+  { name: 'White Rose Dry Cleaners', logo: 'images/brands/white-rose.webp' },
+  { name: 'Chapacopy Ltd', logo: 'images/brands/chapacopy.webp' },
+  { name: 'Artcaffe', logo: 'images/brands/artcaffe.webp' },
+  { name: 'KFC Kenya', logo: 'images/brands/kfc.webp' },
+  { name: 'Cleanfax Dry Cleaners', logo: 'images/brands/cleanfax.webp' },
+  { name: 'Luxe Kaftan', logo: 'images/brands/luxe-kaftan.webp' },
+  { name: 'Reliant Pharmacy' },
+  { name: 'Sunny Forex Bureau Ltd' },
+  { name: 'Kidsydz' },
 ];
 
 /* ---------------------------------------------------------------------------
