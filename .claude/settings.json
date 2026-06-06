@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed -i 's/      <cite>— {{ director.name }}, Director<\\\\/cite>/      <cite>{{ director.name }}, Director<\\\\/cite>/' /home/cecillwala/LINUX/code/sleek-space/src/app/pages/about/about.html)",
+      "Bash(sed -i 's/We deliver end-to-end solutions — from project completion/We deliver end-to-end solutions, from project completion/' /home/cecillwala/LINUX/code/sleek-space/src/app/pages/about/about.html)",
+      "Bash(sed -i 's/The result is well-managed, efficient, and profitable properties — and lasting value for the/The result is well-managed, efficient, and profitable properties, and lasting value for the/' /home/cecillwala/LINUX/code/sleek-space/src/app/pages/about/about.html)",
+      "Bash(sed -i 's/To be a trusted leader in property and facilities management — known for reliable service,/To be a trusted leader in property and facilities management, known for reliable service,/' /home/cecillwala/LINUX/code/sleek-space/src/app/pages/about/about.html)"
+    ]
+  }
+}

@@ -6,7 +6,7 @@ export const routes: Routes = [
     title: '',
     data: {
       description:
-        'SleekSpace Management is a professional property and facilities management firm focused on residential, commercial, and mixed-use developments — maximizing value, tenant satisfaction, and operational excellence.',
+        'SleekSpace Management is a professional property and facilities management firm focused on residential, commercial, and mixed-use developments focusing on maximizing value, tenant satisfaction, and operational excellence.',
     },
     loadComponent: () => import('./pages/home/home').then((m) => m.Home),
   },
@@ -15,7 +15,7 @@ export const routes: Routes = [
     title: 'About',
     data: {
       description:
-        'Meet SleekSpace Management and Director Sheila W. Gichangi — an experienced property and facilities management professional leading a firm built on professionalism, integrity, and operational excellence.',
+        'Meet SleekSpace Management and Director Sheila W. Gichangi and experienced property and facilities management professional leading a firm built on professionalism, integrity, and operational excellence.',
     },
     loadComponent: () => import('./pages/about/about').then((m) => m.About),
   },

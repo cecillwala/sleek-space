@@ -61,7 +61,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     slug: 'property-management',
     title: 'Property Management',
     summary:
-      'End-to-end management of residential, commercial, and mixed-use developments — protecting long-term value and keeping every property running smoothly.',
+      'End-to-end management of residential, commercial, and mixed-use developments. We protect long-term value and keep every property running smoothly.',
     iconPath: ICONS.building,
     items: [
       'Residential Property Management',
@@ -75,7 +75,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     slug: 'tenant-management',
     title: 'Tenant Management',
     summary:
-      'Sourcing, onboarding, and supporting tenants — building positive relationships that reduce voids and keep properties well-occupied.',
+      'Sourcing, onboarding, and supporting tenants to build positive relationships that reduce voids and keep properties well-occupied.',
     iconPath: ICONS.people,
     items: [
       'Tenant Sourcing & Marketing',
@@ -105,7 +105,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     slug: 'project-development-support',
     title: 'Project & Development Support',
     summary:
-      'Seamless transition from construction to operations — managing handover, fit-out, and occupancy so new developments open and perform well.',
+      'Seamless transition from construction to operations, managing handover, fit-out, and occupancy so new developments open and perform well.',
     iconPath: ICONS.clipboard,
     items: [
       'Construction-to-Operations Transition',
@@ -190,7 +190,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
     step: 1,
     title: 'Property Assessment',
     description:
-      'We begin by understanding the property, its condition, and your goals — establishing a clear baseline before anything else.',
+      'We begin by understanding the property, its condition, and your goals so we can establish a clear baseline before anything else.',
   },
   {
     step: 2,
@@ -202,7 +202,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
     step: 3,
     title: 'Operations & Service Delivery',
     description:
-      'Hands-on, day-to-day management — coordinating maintenance, vendors, tenants, and common areas to a consistent standard.',
+      'Hands-on, day-to-day management: coordinating maintenance, vendors, tenants, and common areas to a consistent standard.',
   },
   {
     step: 4,
@@ -214,7 +214,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
     step: 5,
     title: 'Continuous Improvement',
     description:
-      'We review, refine, and recommend improvements — protecting long-term value and keeping spaces well-run over time.',
+      'We review, refine, and recommend improvements to protect long-term value and keep every space well-run over time.',
   },
 ];
 

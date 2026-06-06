@@ -30,7 +30,7 @@ export class BlogAdmin {
       await navigator.clipboard.writeText(text);
       this.statusMsg.set('Copied to clipboard.');
     } catch {
-      this.statusMsg.set('Copy failed — select the text below and copy manually.');
+      this.statusMsg.set('Copy failed. Please select the text below and copy it manually.');
     }
   }
 }

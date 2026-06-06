@@ -20,7 +20,7 @@ import { ReelItem } from '../site-data';
         <app-section-heading
           eyebrow="On Instagram"
           title="Follow our work in motion"
-          lead="Property walkthroughs, maintenance, and the day-to-day of well-run spaces — straight from our Instagram."
+          lead="Property walkthroughs, maintenance, and the day-to-day of well-run spaces. Follow us on Instagram."
           [center]="true"
         />
 

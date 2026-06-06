@@ -29,9 +29,9 @@ export interface BlogPost {
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'signs-you-need-a-professional-property-manager',
-    title: '5 Signs It’s Time to Bring in a Professional Property Manager',
+    title: "5 Signs It's Time to Bring in a Professional Property Manager",
     excerpt:
-      'Self-managing a property works — until it doesn’t. Here are the moments when professional management stops being a luxury and becomes the smarter financial decision.',
+      'Self-managing a property works well at first. But here are the moments when bringing in professional management stops being a luxury and becomes the smarter financial decision.',
     category: 'Property Management',
     author: 'Sheila W. Gichangi',
     date: '2026-05-12',
@@ -40,7 +40,7 @@ export const BLOG_POSTS: BlogPost[] = [
     body: [
       {
         type: 'paragraph',
-        text: 'Owning property can quietly turn into a second job. What begins as a manageable side responsibility — a tenant here, a repair there — slowly grows into a steady stream of calls, paperwork, and decisions. For many owners, the question is not whether they can manage their property, but whether they still should.',
+        text: 'Owning property can quietly turn into a second job. What begins as a manageable side responsibility, a tenant here and a repair there, slowly grows into a steady stream of calls, paperwork, and decisions. For many owners, the question is not whether they can manage their property, but whether they still should.',
       },
       {
         type: 'paragraph',
@@ -49,37 +49,37 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: 'subheading', text: '1. Vacancies are lasting longer than they should' },
       {
         type: 'paragraph',
-        text: 'Every empty month is lost income that you never recover. If units are sitting vacant, if marketing feels ad hoc, or if you are accepting tenants simply because you are tired of waiting, the cost of doing it alone has already exceeded the cost of help. Professional sourcing, vetting, and marketing keep quality tenants moving in — and staying.',
+        text: 'Every empty month is lost income that you never recover. If units are sitting vacant, if marketing feels ad hoc, or if you are accepting tenants simply because you are tired of waiting, the cost of doing it alone has already exceeded the cost of help. Professional sourcing, vetting, and marketing keep quality tenants moving in and staying.',
       },
       { type: 'subheading', text: '2. Maintenance keeps slipping through the cracks' },
       {
         type: 'paragraph',
-        text: 'Small issues become expensive ones when they are deferred. A slow leak, a tired generator, a neglected common area — each erodes both value and tenant goodwill. When you no longer have time for planned, preventive maintenance, reactive repairs quietly become your most expensive line item.',
+        text: 'Small issues become expensive ones when they are deferred. A slow leak, a tired generator, a neglected common area: each erodes both value and tenant goodwill. When you no longer have time for planned, preventive maintenance, reactive repairs quietly become your most expensive line item.',
       },
       {
         type: 'image',
         src: 'images/blog/inline-pyramid.webp',
         alt: 'A modern residential development managed by SleekSpace Management',
-        caption: 'Pyramid Pointe — a residential development under our management.',
+        caption: 'Pyramid Pointe, a residential development under our management.',
       },
       { type: 'subheading', text: '3. Tenant issues are eating your evenings' },
       {
         type: 'paragraph',
-        text: 'Property is a relationship business. When every late-night call and every dispute lands on you personally, both your wellbeing and your judgement suffer. A professional buffer brings consistency, fairness, and clear processes — which, in turn, builds the kind of tenant trust that reduces turnover.',
+        text: 'Property is a relationship business. When every late-night call and every dispute lands on you personally, both your wellbeing and your judgement suffer. A professional buffer brings consistency, fairness, and clear processes that build the kind of tenant trust that reduces turnover.',
       },
       {
         type: 'quote',
-        text: 'The best-run properties are not the ones with the fewest problems — they are the ones where problems are handled quickly, fairly, and the same way every time.',
+        text: 'The best-run properties are not the ones with the fewest problems. They are the ones where problems are handled quickly, fairly, and the same way every time.',
       },
       { type: 'subheading', text: '4. The numbers no longer tell a clear story' },
       {
         type: 'paragraph',
-        text: 'If you cannot say with confidence what your property earned, spent, and netted last quarter, you are managing in the dark. Clear budgeting, transparent service-charge administration, and regular reporting turn a vague sense of “it’s fine” into decisions you can actually stand behind.',
+        text: 'If you cannot say with confidence what your property earned, spent, and netted last quarter, you are managing in the dark. Clear budgeting, transparent service-charge administration, and regular reporting turn a vague feeling that things are fine into decisions you can actually stand behind.',
       },
       { type: 'subheading', text: '5. You are ready to grow' },
       {
         type: 'paragraph',
-        text: 'One property can be a hobby. A portfolio is a business. The systems that let you manage two units rarely scale to ten. If you are acquiring — or planning to — professional management is what lets you expand without multiplying your stress.',
+        text: 'One property can be a hobby. A portfolio is a business. The systems that let you manage two units rarely scale to ten. If you are acquiring or planning to grow, professional management is what lets you expand without multiplying your stress.',
       },
       {
         type: 'paragraph',
@@ -91,7 +91,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'service-charges-demystified',
     title: 'Service Charges, Demystified: Where Your Money Actually Goes',
     excerpt:
-      'Service charges are one of the most misunderstood parts of shared property — and one of the biggest sources of mistrust. Transparency changes everything.',
+      'Service charges are one of the most misunderstood parts of shared property, and one of the biggest sources of mistrust. Transparency changes everything.',
     category: 'Service Charge Administration',
     author: 'Sheila W. Gichangi',
     date: '2026-04-18',
@@ -100,18 +100,18 @@ export const BLOG_POSTS: BlogPost[] = [
     body: [
       {
         type: 'paragraph',
-        text: 'Few topics generate as much friction in shared developments as the service charge. Residents often feel they are paying into a black box; owners worry the funds are not stretching far enough. Yet the service charge is simply the shared cost of keeping a property safe, clean, functional, and pleasant to live or work in — and when it is administered well, it is one of the most powerful tools for protecting value.',
+        text: 'Few topics generate as much friction in shared developments as the service charge. Residents often feel they are paying into a black box; owners worry the funds are not stretching far enough. Yet the service charge is simply the shared cost of keeping a property safe, clean, functional, and pleasant to live or work in. When it is administered well, it becomes one of the most powerful tools for protecting value.',
       },
       { type: 'subheading', text: 'What a service charge actually covers' },
       {
         type: 'paragraph',
-        text: 'A well-structured service charge typically funds the upkeep of everything shared: security, cleaning, landscaping, waste management, common-area utilities, lift and generator servicing, and the maintenance of shared structures. It also, crucially, builds a reserve — a fund set aside for the larger, less frequent costs like repainting, resurfacing, or replacing major equipment.',
+        text: 'A well-structured service charge typically funds the upkeep of everything shared: security, cleaning, landscaping, waste management, common-area utilities, lift and generator servicing, and the maintenance of shared structures. It also, crucially, builds a reserve. This is a fund set aside for the larger, less frequent costs like repainting, resurfacing, or replacing major equipment.',
       },
       {
         type: 'image',
         src: 'images/blog/inline-lavington.webp',
         alt: 'Well-kept forecourt and common areas at a managed commercial development',
-        caption: 'Lavington Avenue — shared spaces kept to a consistent standard.',
+        caption: 'Lavington Avenue, shared spaces kept to a consistent standard.',
       },
       { type: 'subheading', text: 'Why transparency is everything' },
       {
@@ -120,7 +120,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: 'quote',
-        text: 'A service charge is not the price of a property’s problems. It is the price of a property that quietly works — every single day.',
+        text: "A service charge is not the price of a property's problems. It is the price of a property that quietly works, every single day.",
       },
       { type: 'subheading', text: 'What good administration looks like' },
       {
@@ -129,13 +129,13 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: 'paragraph',
-        text: 'Done properly, the service charge becomes invisible in the best way — residents simply experience a property that is clean, secure, and well-maintained, and owners see their asset holding its value year after year.',
+        text: 'Done properly, the service charge becomes invisible in the best possible way. Residents simply experience a property that is clean, secure, and well-maintained, while owners see their asset holding its value year after year.',
       },
     ],
   },
   {
     slug: 'from-handover-to-thriving',
-    title: 'From Handover to Thriving: Managing a Development’s First Year',
+    title: "From Handover to Thriving: Managing a Development's First Year",
     excerpt:
       'The handover from contractor to operations is where many promising developments stumble. A structured first year protects value and sets the tone for everything that follows.',
     category: 'Project & Development Support',
@@ -151,32 +151,32 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: 'subheading', text: 'The transition no one plans for' },
       {
         type: 'paragraph',
-        text: 'Construction and operations are two different disciplines. A project can be delivered beautifully and still falter the moment it has to run day to day. Bridging that gap — moving a building from “built” to “running well” — is a job in itself, and it begins before the last contractor has left site.',
+        text: 'Construction and operations are two different disciplines. A project can be delivered beautifully and still falter the moment it has to run day to day. Bridging that gap, moving a building from built to running well, is a job in itself, and it begins before the last contractor has left site.',
       },
       { type: 'subheading', text: 'Snagging and handover, done thoroughly' },
       {
         type: 'paragraph',
-        text: 'A disciplined snagging and handover process captures defects while they are still the contractor’s responsibility, documents every system and warranty, and ensures the people who will operate the building actually understand it. Skipping this step is one of the most expensive mistakes an owner can make.',
+        text: "A disciplined snagging and handover process captures defects while they are still the contractor's responsibility, documents every system and warranty, and ensures the people who will operate the building actually understand it. Skipping this step is one of the most expensive mistakes an owner can make.",
       },
       {
         type: 'image',
         src: 'images/blog/inline-ola.webp',
         alt: 'A commercial development managed by SleekSpace Management',
-        caption: 'OLA Kilimani — a commercial development we manage.',
+        caption: 'OLA Kilimani, a commercial development we manage.',
       },
       { type: 'subheading', text: 'Onboarding the first occupants' },
       {
         type: 'paragraph',
-        text: 'First impressions set expectations for years. Smooth tenant onboarding — clear leases, organised move-ins, responsive early support — turns new occupants into long-term ones. The standard you set in month one becomes the standard residents expect for the life of the building.',
+        text: 'First impressions set expectations for years. Smooth tenant onboarding, with clear leases, organised move-ins, and responsive early support, turns new occupants into long-term ones. The standard you set in month one becomes the standard residents expect for the life of the building.',
       },
       {
         type: 'quote',
-        text: 'A building does not become a home or a workplace on handover day. It becomes one in the first year — through hundreds of small decisions made well.',
+        text: 'A building does not become a home or a workplace on handover day. It becomes one in the first year, through hundreds of small decisions made well.',
       },
       { type: 'subheading', text: 'The first year sets the standard' },
       {
         type: 'paragraph',
-        text: 'Establishing planned maintenance, commissioning building systems properly, setting up transparent financials, and building early relationships with residents are not glamorous tasks. But together they decide whether a development matures into a well-regarded, fully-occupied asset — or spends years recovering from a rocky start.',
+        text: 'Establishing planned maintenance, commissioning building systems properly, setting up transparent financials, and building early relationships with residents are not glamorous tasks. But together they decide whether a development matures into a well-regarded, fully-occupied asset or spends years recovering from a rocky start.',
       },
       {
         type: 'paragraph',
