@@ -61,12 +61,12 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     slug: 'property-management',
     title: 'Property Management',
     summary:
-      'End-to-end management of residential, commercial, and mixed-use developments. We protect long-term value and keep every property running smoothly.',
+      'End to end management of residential, commercial, and mixed use developments. We protect long term value and keep every property running smoothly.',
     iconPath: ICONS.building,
     items: [
       'Residential Property Management',
       'Commercial Property Management',
-      'Mixed-Use Development Management',
+      'Mixed Use Development Management',
       'Portfolio Management',
       'Estate & HOA Management',
     ],
@@ -75,14 +75,14 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     slug: 'tenant-management',
     title: 'Tenant Management',
     summary:
-      'Sourcing, onboarding, and supporting tenants to build positive relationships that reduce voids and keep properties well-occupied.',
+      'Sourcing, onboarding, and supporting tenants to build positive relationships that reduce voids and keep properties well occupied.',
     iconPath: ICONS.people,
     items: [
       'Tenant Sourcing & Marketing',
       'Tenant Vetting & Onboarding',
       'Lease Negotiations',
       'Lease Administration',
-      'Move-In / Move-Out Management',
+      'Move In / Move Out Management',
     ],
   },
   {
@@ -105,12 +105,12 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     slug: 'project-development-support',
     title: 'Project & Development Support',
     summary:
-      'Seamless transition from construction to operations, managing handover, fit-out, and occupancy so new developments open and perform well.',
+      'Seamless transition from construction to operations, managing handover, fit out, and occupancy so new developments open and perform well.',
     iconPath: ICONS.clipboard,
     items: [
-      'Construction-to-Operations Transition',
+      'Construction to Operations Transition',
       'Snagging & Handover Management',
-      'Fit-Out Coordination',
+      'Fit Out Coordination',
       'Occupancy Planning',
       'Stakeholder Coordination',
     ],
@@ -151,7 +151,7 @@ export const CORE_VALUES: ValueItem[] = [
     iconPath: 'M9 12l2 2 4-4M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z',
   },
   {
-    title: 'Client-Centered Service',
+    title: 'Client Centered Service',
     description: 'Putting owners, investors, and tenants at the heart of what we do.',
     iconPath: 'M16 11a3 3 0 1 0-2.99-3M5.5 21a6.5 6.5 0 0 1 13 0M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z',
   },
@@ -167,12 +167,12 @@ export const CORE_VALUES: ValueItem[] = [
   },
   {
     title: 'Operational Excellence',
-    description: 'Running efficient, well-organized operations that perform reliably.',
+    description: 'Running efficient, well organized operations that perform reliably.',
     iconPath: 'M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z',
   },
   {
     title: 'Sustainability',
-    description: 'Caring for resources and the long-term health of every space.',
+    description: 'Caring for resources and the long term health of every space.',
     iconPath: 'M5 21c0-9 7-16 16-16 0 9-7 16-16 16zM5 21c4-4 8-6 12-7',
   },
   {
@@ -202,7 +202,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
     step: 3,
     title: 'Operations & Service Delivery',
     description:
-      'Hands-on, day-to-day management: coordinating maintenance, vendors, tenants, and common areas to a consistent standard.',
+      'Hands on, day to day management: coordinating maintenance, vendors, tenants, and common areas to a consistent standard.',
   },
   {
     step: 4,
@@ -214,36 +214,36 @@ export const PROCESS_STEPS: ProcessStep[] = [
     step: 5,
     title: 'Continuous Improvement',
     description:
-      'We review, refine, and recommend improvements to protect long-term value and keep every space well-run over time.',
+      'We review, refine, and recommend improvements to protect long term value and keep every space well run over time.',
   },
 ];
 
 export const WHY_CHOOSE: string[] = [
   'Led by an experienced property & facilities professional',
-  'Hands-on, director-level involvement',
-  'Residential, commercial & mixed-use expertise',
+  'Hands on, director level involvement',
+  'Residential, commercial & mixed use expertise',
   'Strong tenant relationship management',
-  'Long-term property value optimization',
+  'Long term property value optimization',
   'Transparent reporting & communication',
-  'Construction-to-operations capability',
+  'Construction to operations capability',
   'Operational excellence & efficiency',
 ];
 
 export const AUDIENCES: AudienceItem[] = [
   {
     title: 'Property Owners & Investors',
-    description: 'Maximizing property value while reducing the burden of day-to-day management.',
+    description: 'Maximizing property value while reducing the burden of day to day management.',
   },
   {
     title: 'Real Estate Developers',
-    description: 'Handover, occupancy, and post-completion management support for new developments.',
+    description: 'Handover, occupancy, and post completion management support for new developments.',
   },
   {
     title: 'Residential Communities',
-    description: 'Organized, comfortable, well-run living environments and estate management.',
+    description: 'Organized, comfortable, well run living environments and estate management.',
   },
   {
-    title: 'Commercial & Mixed-Use Owners',
+    title: 'Commercial & Mixed Use Owners',
     description: 'Professional business environments that keep tenants and visitors satisfied.',
   },
 ];
@@ -260,9 +260,9 @@ export const DIRECTOR = {
   /** Contextual seated portrait (home Leadership section). */
   photoHome: 'images/director-home.webp',
   bio: [
-    'Sheila Gichangi is a property management and built environment professional with extensive experience in residential, commercial, and mixed-use developments across Kenya.',
+    'Sheila Gichangi is a property management and built environment professional with extensive experience in residential, commercial, and mixed use developments across Kenya.',
     'As Director of SleekSpace Management, she brings a strong background in property operations, tenant relations, facilities management, and construction project coordination.',
-    'Over the years, she has successfully managed high-value developments, overseen tenant onboarding and lease negotiations, coordinated property maintenance programs, and implemented operational systems that enhance property value while ensuring exceptional client and tenant satisfaction.',
+    'Over the years, she has successfully managed high value developments, overseen tenant onboarding and lease negotiations, coordinated property maintenance programs, and implemented operational systems that enhance property value while ensuring exceptional client and tenant satisfaction.',
   ],
   quote:
     'Our goal is to provide property owners with peace of mind through proactive management, transparent communication, and exceptional service delivery.',
@@ -291,7 +291,7 @@ export const MEMBERSHIPS: Credential[] = [
 
 export const QUALIFICATIONS: Credential[] = [
   { label: 'BSc Construction Project Management', detail: 'Kenyatta University' },
-  { label: 'MBA Candidate', detail: 'USIU-Africa' },
+  { label: 'MBA Candidate', detail: 'USIU Africa' },
 ];
 
 /* ---------------------------------------------------------------------------
