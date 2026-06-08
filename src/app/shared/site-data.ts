@@ -304,11 +304,8 @@ export const PORTFOLIO: PortfolioProperty[] = [
     category: 'Commercial',
     image: 'images/portfolio-lavington-avenue.webp',
   },
-  { name: 'Viashla Business Park', category: 'Commercial' },
-  { name: 'Bingwa Sacco Society Complex', category: 'Commercial' },
-  { name: 'Imarika DT Plaza', category: 'Commercial' },
-  { name: 'Eaton Place Gigiri', category: 'Commercial' },
-  { name: 'Park Towers', category: 'Residential' },
+  { name: 'Viashla Business Park', category: 'Commercial', image: 'images/portfolio-viashla-business-park.jpeg' },
+  { name: 'Park Towers', category: 'Residential', image: 'images/portfolio-park-towers.jpeg' },
   {
     name: 'Pyramid Pointe',
     category: 'Residential',
