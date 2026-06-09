@@ -61,12 +61,12 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     slug: 'property-management',
     title: 'Property Management',
     summary:
-      'End to end management of residential, commercial, and mixed use developments. We protect long term value and keep every property running smoothly.',
+      'End-to-end management of residential, commercial, and mixed-use developments. We protect long-term value and keep every property running smoothly.',
     iconPath: ICONS.building,
     items: [
       'Residential Property Management',
       'Commercial Property Management',
-      'Mixed Use Development Management',
+      'Mixed-Use Development Management',
       'Portfolio Management',
       'Estate & HOA Management',
     ],
@@ -202,7 +202,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
     step: 3,
     title: 'Operations & Service Delivery',
     description:
-      'Hands on, day to day management: coordinating maintenance, vendors, tenants, and common areas to a consistent standard.',
+      'Continuous oversight and management: coordinating maintenance, vendors, tenants, and common areas to a consistent standard.',
   },
   {
     step: 4,
@@ -214,14 +214,14 @@ export const PROCESS_STEPS: ProcessStep[] = [
     step: 5,
     title: 'Continuous Improvement',
     description:
-      'We review, refine, and recommend improvements to protect long term value and keep every space well run over time.',
+      'We review, refine, and recommend improvements to protect sustained value and keep every space running efficiently.',
   },
 ];
 
 export const WHY_CHOOSE: string[] = [
   'Led by an experienced property & facilities professional',
-  'Hands on, director level involvement',
-  'Residential, commercial & mixed use expertise',
+  'Hands-on, director level involvement',
+  'Residential, commercial & mixed-use expertise',
   'Strong tenant relationship management',
   'Long term property value optimization',
   'Transparent reporting & communication',
@@ -232,18 +232,18 @@ export const WHY_CHOOSE: string[] = [
 export const AUDIENCES: AudienceItem[] = [
   {
     title: 'Property Owners & Investors',
-    description: 'Maximizing property value while reducing the burden of day to day management.',
+    description: 'Maximizing property value while reducing the burden of routine management.',
   },
   {
     title: 'Real Estate Developers',
-    description: 'Handover, occupancy, and post completion management support for new developments.',
+    description: 'Handover, occupancy, and post-completion management support for new developments.',
   },
   {
     title: 'Residential Communities',
-    description: 'Organized, comfortable, well run living environments and estate management.',
+    description: 'Organized, comfortable, well-run living environments and estate management.',
   },
   {
-    title: 'Commercial & Mixed Use Owners',
+    title: 'Commercial & Mixed-Use Owners',
     description: 'Professional business environments that keep tenants and visitors satisfied.',
   },
 ];
@@ -260,7 +260,7 @@ export const DIRECTOR = {
   /** Contextual seated portrait (home Leadership section). */
   photoHome: 'images/director-home.webp',
   bio: [
-    'Sheila Gichangi is a property management and built environment professional with extensive experience in residential, commercial, and mixed use developments across Kenya.',
+    'Sheila Gichangi is a property management and built environment professional with extensive experience in residential, commercial, and integrated developments across Kenya.',
     'As Director of SleekSpace Management, she brings a strong background in property operations, tenant relations, facilities management, and construction project coordination.',
     'Over the years, she has successfully managed high value developments, overseen tenant onboarding and lease negotiations, coordinated property maintenance programs, and implemented operational systems that enhance property value while ensuring exceptional client and tenant satisfaction.',
   ],
@@ -374,7 +374,7 @@ export const REELS: ReelItem[] = [
  * Contact
  * ------------------------------------------------------------------------- */
 export const CONTACT = {
-  email: 'gichangisheila@gmail.com',
+  email: 'gichangisheila@sleekspace.co.ke',
   phone: '+254 704 207 860',
   address: 'Nairobi, Kenya',
   linkedIn: 'https://www.linkedin.com/in/sheila-g-723b47189',
