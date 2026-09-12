@@ -354,20 +354,43 @@ export interface ReelItem {
    * shows a rich visual preview; otherwise it falls back to a branded tile.
    */
   thumbnail?: string;
-  /** Short label shown on the tile. */
+  /** Short label shown on the tile. Leave unset when the cover carries its own text. */
   caption?: string;
+  /** Alt text for the cover image. Falls back to `caption` when unset. */
+  alt?: string;
 }
 
 /**
- * Placeholders for now. To make a tile live, add the reel `url` (and, ideally,
- * a `thumbnail` image in public/images/reels/ for a full preview):
- *   { url: 'https://www.instagram.com/reel/XXXX/', thumbnail: 'images/reels/1.webp', caption: '...' }
+ * Live reels. Covers live in public/images/reels/ and are cropped to 9:16 so the
+ * strip stays even. `caption` is left unset because each cover already carries
+ * its own on-image text; `alt` keeps the tiles readable for screen readers.
  */
 export const REELS: ReelItem[] = [
-  { caption: 'Property walkthroughs' },
-  { caption: 'Maintenance in action' },
-  { caption: 'Tenant experience' },
-  { caption: 'Behind the scenes' },
+  {
+    url: 'https://www.instagram.com/reel/DcfXXLPkzMF/',
+    thumbnail: 'images/reels/reel-kilimani-rent.webp',
+    alt: 'Reel: what 165,000 shillings a month actually rents in Kilimani',
+  },
+  {
+    url: 'https://www.instagram.com/reel/DcTBH0Vsrqn/',
+    thumbnail: 'images/reels/reel-lavington-5-bed.webp',
+    alt: 'Reel: inside a five bedroom house in Lavington',
+  },
+  {
+    url: 'https://www.instagram.com/reel/Db0Pxx6s_yE/',
+    thumbnail: 'images/reels/reel-master-bedroom-tour.webp',
+    alt: 'Reel: master bedroom tour of a five bedroom house',
+  },
+  {
+    url: 'https://www.instagram.com/reel/DbI8SLeCtvW/',
+    thumbnail: 'images/reels/reel-same-budget.webp',
+    alt: 'Reel: what the same rental budget gets you in different areas',
+  },
+  {
+    url: 'https://www.instagram.com/p/DbLnq6ViPEe/',
+    thumbnail: 'images/reels/post-nairobi-cost-guide.webp',
+    alt: 'Guide: what luxury living in Nairobi actually costs',
+  },
 ];
 
 /* ---------------------------------------------------------------------------
@@ -378,6 +401,7 @@ export const CONTACT = {
   phone: '+254 704 207 860',
   address: 'Nairobi, Kenya',
   linkedIn: 'https://www.linkedin.com/in/sheila-g-723b47189',
-  // TODO: replace with the company Instagram profile URL when available.
-  instagram: '#',
+  instagram: 'https://www.instagram.com/sleekspaceproperties.ke/',
+  // TODO: replace with the company TikTok profile URL.
+  tiktok: '#',
 } as const;

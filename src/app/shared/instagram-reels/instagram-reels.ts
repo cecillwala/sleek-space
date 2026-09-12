@@ -33,16 +33,16 @@ import { ReelItem } from '../site-data';
                   [href]="reel.url"
                   target="_blank"
                   rel="noopener"
-                  [attr.aria-label]="reel.caption || 'Watch reel on Instagram'"
+                  [attr.aria-label]="reel.alt || reel.caption || 'View on Instagram'"
                 >
                   @if (reel.thumbnail) {
-                    <img class="reel__media" [src]="reel.thumbnail" [alt]="reel.caption || 'Instagram reel'" loading="lazy" />
+                    <img class="reel__media" [src]="reel.thumbnail" [alt]="reel.alt || reel.caption || 'Instagram reel'" loading="lazy" />
                   } @else {
                     <span class="reel__placeholder" aria-hidden="true"></span>
                   }
-                  <span class="reel__overlay">
+                  <span class="reel__overlay reel__overlay--link">
                     <span class="reel__play" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
                     </span>
                     @if (reel.caption) {
                       <span class="reel__caption">{{ reel.caption }}</span>
@@ -87,7 +87,7 @@ import { ReelItem } from '../site-data';
   styles: `
     .reels__grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
       gap: 1.25rem;
     }
     .reel {
@@ -120,6 +120,17 @@ import { ReelItem } from '../site-data';
         radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--color-secondary) 40%, transparent), transparent 60%),
         linear-gradient(160deg, var(--color-primary), var(--color-primary-hover));
     }
+    /* Alternate the wash so a run of link-only tiles doesn't read as one block. */
+    .reel:nth-child(3n + 2) .reel__placeholder {
+      background:
+        radial-gradient(circle at 70% 25%, color-mix(in srgb, var(--color-secondary) 55%, transparent), transparent 62%),
+        linear-gradient(200deg, var(--color-primary-hover), var(--color-primary));
+    }
+    .reel:nth-child(3n + 3) .reel__placeholder {
+      background:
+        radial-gradient(circle at 40% 80%, color-mix(in srgb, var(--color-accent) 42%, transparent), transparent 58%),
+        linear-gradient(140deg, var(--color-primary), color-mix(in srgb, var(--color-primary-hover) 82%, #000));
+    }
     .reel__overlay {
       position: absolute;
       inset: 0;
@@ -133,12 +144,23 @@ import { ReelItem } from '../site-data';
       color: #fff;
       background: linear-gradient(to top, rgba(47, 36, 31, 0.55), transparent 55%);
     }
+    /* Covers carry their own headline text, so the play affordance sits in the
+       corner rather than dead centre over the artwork. */
+    .reel__overlay--link {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: flex-start;
+      gap: 0.5rem;
+      text-align: left;
+      padding: 0.85rem;
+    }
     .reel__play {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 54px;
-      height: 54px;
+      flex: none;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       background: color-mix(in srgb, #fff 88%, transparent);
       color: var(--color-primary);
