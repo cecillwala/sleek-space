@@ -402,6 +402,5 @@ export const CONTACT = {
   address: 'Nairobi, Kenya',
   linkedIn: 'https://www.linkedin.com/in/sheila-g-723b47189',
   instagram: 'https://www.instagram.com/sleekspaceproperties.ke/',
-  // TODO: replace with the company TikTok profile URL.
-  tiktok: '#',
+  tiktok: 'https://www.tiktok.com/@sleekspace0?_r=1&_t=ZS-99gohCx9b7Q',
 } as const;
